@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bar_style.css" media="screen"/>
+    <script src="coordinates.js" defer></script>
+    <script src="codigo.js" defer></script>
+    
+    <title>Wide threshold spillway</title>
+    
+</head>
+<body>
+    <h1>Wide threshold spillway</h1>
+    <table class="tablas">
+        <td><img src="options\PH_square.png"></td>
+            <td><img src="options\PH_angled.png"></td>
+            <td><img src="options\PH_beveled.png"></td>
+    </table>
+    <div id="INPUTS" >
+        <label id="labelP" class="labelOPTION">Height of weir P (m)
+        <input type="number" step = "0.1" value="3.5" class="slider" id="varP">
+        </label>
+        <label id="labelB" class="labelOPTION">Approach channel width B (m)
+            <input type="number" step="1" value="84" class="slider" id="varB">
+        </label>
+        <label id="labelH0" class="labelOPTION">Total hydraulic head H0 (m)
+            <input type="number" step="0.1" value="3.5" class="slider" id="varH0">
+        </label>
+        <label id="labelQ" class="labelOPTION">Design flow Q (m3/s)
+            <input type="number" step="50" value="800" class="slider" id="varQ">
+        </label>
+        <label id="labelMWL" class="labelOPTION" style="visibility:hidden">Maximum water level
+            <input type="number" value="132.5" class="slider" id="input_maximumwaterlvl">
+        </label>
+        <label id="label nWL" class="labelOPTION" style="visibility:hidden">Normal water level
+            <input type="number" value="129.0" class="slider" id="input_normalwaterlvl">
+        </label>
+      </div>
+      <div id="TIPO_APPROACH" class="tablas">
+          <p class="labelOPTION">Click on an image to select the type of weir<table class="tablas" id="table_face">
+        <tr>
+            <td><label for="select_mnangulo"><img src="options\mn\angulo.png"></label></td>
+            <td><label for="select_mnbevel"><img src="options\mn\bevel.png"></label></td>
+            <td><label for="select_mnsquare"><img src="options\mn\rectangle.png"></label></td>
+        </tr>
+        <tr>    
+            <td><input id="select_mnangulo"  type="radio" name="radioinnerface" value="angled" >
+            </td>
+            <td ><input  id="select_mnbevel" type="radio" name="radioinnerface" value="beveled">
+            </td>
+            <td><input id="select_mnsquare" type  ="radio" name="radioinnerface" value="squared" checked>
+            </td>
+        </tr>
+    </table> </p>
+    <p>
+    <label id="P">Angle or radius 
+        <input type="text" style="text-align: center;font-size:20pt"  value="" id="input_innerfaceangler">
+    </label>
+</p>
+<p>Click on an image to select the type of approach<table id="table_approach" class="tablas">
+        <tr>
+            <td><label for="select_mbangulo"><img src="options\mb\approach_beveled.png"></label></td>
+            <td><label for="select_mbbevel"><img src="options\mb\approach_radius.png"></label></td>
+            <td><label for="select_mbsquare"><img src="options\mb\approach_square.png"></label></td>
+        </tr>
+    
+        <tr>    
+            <td><input id="select_mbangulo"  type="radio" name="approach" value="angled" >
+            </td>
+            <td ><input  id="select_mbbevel" type="radio" name="approach" value="beveled">
+            </td>
+            <td><input id="select_mbsquare" type  ="radio" name="approach" value="squared" checked>
+            </td>
+        </tr>
+    </table></p>
+    <p><label id="P">Approach narrowing b 
+        <input type="number" style="text-align: center;font-size:20pt" step="0.1" value="" id="input_approachb">
+        <br><label><input type="checkbox" value="unknownb" id="unknownb">We don't know it.</label>
+    </label></p>
+<p><label id="P">Angle or radius 
+        <input type="text" style="text-align: center;font-size:20pt" value="" id="input_approachangler">
+    </label>
+</p>
+<input type="button" class="button" value="Calculate parameters" onclick="calculate()">
+<div id="RESULTS"><ul id="listaresults"></ul></div>
+</body>
+</html>
