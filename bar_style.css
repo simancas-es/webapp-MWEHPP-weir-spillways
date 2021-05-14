@@ -34,13 +34,16 @@ label.labelOPTION{
   box-shadow: 0 5px #666;
   transform: translateY(5px);
 }
-
 .tablas
   {
     text-align:center;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid Black;
     }
+td{
+  border: 1px solid Black;
+}
 
 .slidecontainer {
     width: 100%; /* Width of the outside container */
